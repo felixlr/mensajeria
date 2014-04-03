@@ -11,14 +11,21 @@ sf_guard_password:
   url:  /request_password
   param: { module: sfGuardAuth, action: password }
   
-  
+registrar:
+  url:  /registrar
+  param: { module: register, action: index }
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
+principal:
+  url:  /contactos
+  param: { module: contacto, action: index }
+
 homepage:
   url:   /
-  param: { module: default, action: index } 
+  param: { module: sfGuardAuth, action: signin } 
   
 # generic rules
 # please, remove them by adding more specific rules
