@@ -17,6 +17,36 @@ class mensajeActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+    $form->bind(
+      $request->getParameter($form->getName()),
+      $request->getFiles($form->getName())
+      );
+    
+    if ($form->isValid())
+    {
+      $values = $form->getValues();
+      $mensaje = new Mensaje();
+      $mensaje->
   }
+  
+  public function procesarFormulario(sfWebRequest $request, $form)
+  {
+     $form->bind(
+      $request->getParameter($form->getName()),
+      $request->getFiles($form->getName())
+      );
+    
+    if ($form->isValid())
+    {
+      $form->save();
+    }
+    
+    $id=contacto->getId();
+    $this->redirect('conversacion/'$id);
+  }
+    $this->redirect('conversacion/'$id);
+  
+  
+  
+  
 }

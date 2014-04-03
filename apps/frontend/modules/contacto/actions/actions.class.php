@@ -17,6 +17,13 @@ class contactoActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-
+    $this->contactos = Doctrine::getTable('Contacto')->getActivas();
   }
+  
+  public function executeMostrar(sfWebRequest $request)
+  {
+      
+  }
+  
+  
 }

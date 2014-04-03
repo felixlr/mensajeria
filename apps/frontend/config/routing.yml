@@ -19,6 +19,10 @@ registrar:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
+chat:
+  url:  /conversacion/:id
+  param: { module: mensaje, action: index }
+  
 principal:
   url:  /contactos
   param: { module: contacto, action: index }
