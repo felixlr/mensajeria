@@ -15,18 +15,18 @@ class mensajeActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
+  public function executeIdex(sfWebRequest $request)
+  {
+   
+  }
   public function executeIndex(sfWebRequest $request)
   {
-    $form->bind(
-      $request->getParameter($form->getName()),
-      $request->getFiles($form->getName())
-      );
-    
-    if ($form->isValid())
+    $this->formulario= new MensajeFormulario();
+    if($this->getRequest()->isMethod('post'))
     {
-      $values = $form->getValues();
-      $mensaje = new Mensaje();
-      $mensaje->
+      $this->procesarFormulario($request, $this->formulario);
+    }
+    
   }
   
   public function procesarFormulario(sfWebRequest $request, $form)
@@ -38,14 +38,14 @@ class mensajeActions extends sfActions
     
     if ($form->isValid())
     {
-      $form->save();
+      $usuario=$request->getUser();
+      $mensaje= new Mensaje();
+      $mensaje->emisor=$usuario;
+      $mensaje->receptor= Doctrine::getTable('sfGuardUser')->find($request->getParameter('id'));
+      $mensaje->mensaje=$form->getValues();
+      $mensaje->save();
     }
-    
-    $id=contacto->getId();
-    $this->redirect('conversacion/'$id);
   }
-    $this->redirect('conversacion/'$id);
-  
   
   
   
