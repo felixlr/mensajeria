@@ -1,0 +1,17 @@
+Contacto:
+  actAs: {Timestampable: ~}
+  columns: 
+    amigo_id: {type: integer, notnull: true}
+    esta_activa: {type: boolean, default: true}
+  relations:
+    sfGuardUser: {local: amigo_id, foreign: id, foreignAlias: Contactos}
+
+Mensaje:
+  actAs: {Timestampable: ~}
+  columns:
+    mensaje: {type: string(255), notnull: true}
+    emisor: {type: integer, notnull: true}
+    receptor: {type: integer, notnull: true}
+  relations:
+    sfGuardUser: {local: emisor, foreign: id, foreignAlias: Emisormensajes }
+    sfGuardUser: {local: receptor, foreign: id, foreignAlias: Receptormensajes }
