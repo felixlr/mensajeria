@@ -12,6 +12,7 @@ Mensaje:
     mensaje: {type: string(255), notnull: true}
     emisor: {type: integer, notnull: true}
     receptor: {type: integer, notnull: true}
+    nombre_emisor: {type: string(255), notnull: true}
   relations:
     sfGuardUser: {local: emisor, foreign: id, foreignAlias: Emisormensajes }
     sfGuardUser: {local: receptor, foreign: id, foreignAlias: Receptormensajes }

@@ -16,4 +16,15 @@ class MensajeTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Mensaje');
     }
+
+     
+
+     public function getMensajesPorEmisorYReceptor($emisor, $receptor){
+         $query = Doctrine_Core::getTable('mensaje')
+         ->createQuery('mensaje')
+         ->where("mensaje.emisor = $emisor")->andWhere("mensaje.receptor = $receptor")
+         ->orWhere("mensaje.emisor = $emisor")->andWhere("mensaje.receptor = $receptor")
+         ->execute();
+         return $query;
+    }
 }

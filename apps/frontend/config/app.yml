@@ -6,5 +6,7 @@
 
 all:
   sf_guard_plugin:
-    routes_register: false
+    #routes_register: false
+    success_signin_url: /contactos
+    success_signout_url: /login
 

@@ -1,5 +1,7 @@
-<div class="container">
-<table class="table">
+  <div class="container">
+      <?php echo link_to('Cerrar sesion', 'sf_guard_signout');?>
+    
+    <table class="table">
 <?php foreach($contactos as $contacto): ?>
 
      <tr>

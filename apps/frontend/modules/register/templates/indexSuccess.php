@@ -5,5 +5,5 @@
     <?php echo $form ?>
   </table>
  
-  <input type="submit" name="register" value="Register" />
+  <input type="submit" name="Registrarse" value="Registrarse" class="btn btn-success"/>
 </form>
