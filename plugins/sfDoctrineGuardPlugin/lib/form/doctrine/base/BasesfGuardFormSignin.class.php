@@ -30,7 +30,9 @@ class BasesfGuardFormSignin extends BaseForm
 
     if (sfConfig::get('app_sf_guard_plugin_allow_login_with_email', true))
     {
-      $this->widgetSchema['username']->setLabel('Username or E-Mail');
+      $this->widgetSchema['username']->setLabel('Nombre de Usuario o e-mail:');
+      $this->widgetSchema['password']->setLabel('Contraseña:');
+      $this->widgetSchema['remember']->setLabel('Recordar:');
     }
 
     $this->validatorSchema->setPostValidator(new sfGuardValidatorUser());

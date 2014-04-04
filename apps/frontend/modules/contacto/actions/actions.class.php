@@ -18,6 +18,7 @@ class contactoActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->contactos = Doctrine::getTable('Contacto')->getActivas();
+    $this->usuario = $this->getUser()->getGuardUser()->getUserName();
   }
   
   public function executeMostrar(sfWebRequest $request)

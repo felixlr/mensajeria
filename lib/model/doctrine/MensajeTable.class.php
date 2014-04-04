@@ -23,7 +23,7 @@ class MensajeTable extends Doctrine_Table
          $query = Doctrine_Core::getTable('mensaje')
          ->createQuery('mensaje')
          ->where("mensaje.emisor = $emisor")->andWhere("mensaje.receptor = $receptor")
-         ->orWhere("mensaje.emisor = $emisor")->andWhere("mensaje.receptor = $receptor")
+         ->orWhere("mensaje.emisor = $receptor")->andWhere("mensaje.receptor = $emisor")
          ->execute();
          return $query;
     }
